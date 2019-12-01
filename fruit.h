@@ -1,6 +1,6 @@
 #pragma once
 #include<iostream>
-#include"punkt.h"
+#include"Point_er.h"
 using namespace std;
 
 class Fruit :public Point_er

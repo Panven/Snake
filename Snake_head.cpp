@@ -1,9 +1,8 @@
 #include<iostream>
-#include"punkt.h"
 #include<cstdlib>
 #include<cmath>
 #include<ctime>
-#include"snakehead.h"
+#include"Snake_head.h"
 using namespace std;
 
 

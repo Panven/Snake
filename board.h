@@ -1,15 +1,15 @@
 #pragma once
 #include<iostream>
-#include"wymiary.h"
-#include"fruit.h"
-#include"snakehead.h"
-#include"snaketail.h"
-#include"gierka.h"
-
+#include "Snake_head.h"
+#include "Fruit.h"
+#include "Snake_tail.h"
 using namespace std;
 
 class Board :public Sizes
 {
 public:
-    void board_draw(Fruit*fruit,Snake_head*snake_head,Snake_tail*snake_tail/*,Game*game*/);
+	int score;
+	int best_score;
+    void board_draw(Fruit*fruit,Snake_head*snake_head,Snake_tail*snake_tail);
+	void getBest_score();
 };

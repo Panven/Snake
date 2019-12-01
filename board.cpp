@@ -1,16 +1,44 @@
 #include<iostream>
 #include<windows.h>
-#include"board.h"
+#include <fstream>
+#include <string>
+#include"Board.h"
 
 using namespace std;
 
-void Board::board_draw(Fruit*fruit,Snake_head*snake_head,Snake_tail*snake_tail/*,Game*game*/)
+
+void Board::getBest_score()
 {
+	fstream file;
+	file.open("Data.txt", ios::in | ios::out);
+	if (file.good())
+	{
+		string best_score_str;
+		file >> best_score_str;
+		this->best_score = atoi(best_score_str.c_str());
+	}
+
+}
+
+
+
+
+
+
+
+
+void Board::board_draw(Fruit*fruit,Snake_head*snake_head,Snake_tail*snake_tail)
+{
+	fstream file;
+	file.open("Data.txt", ios::in | ios::out);
+
+
     system("cls"); //system("clear");
     for (int i = 0; i < width+1; i++)
         cout << "#";
     cout << endl;
 
+	getBest_score();
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -86,7 +114,11 @@ void Board::board_draw(Fruit*fruit,Snake_head*snake_head,Snake_tail*snake_tail/*
 
     for (int i = 0; i < width+1; i++)
         cout << "#";
-	//cout << endl << game->score << endl;
-	
+	cout << endl << "Wynik: " << this->score << endl;
+	cout << "Najlepszy wynik: " << this->best_score << endl;
+	if (this->score > this->best_score)
+	{
+		file << score;
+	}
     cout << endl;
 }

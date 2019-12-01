@@ -3,7 +3,7 @@
 #include<cstdlib>
 #include<cmath>
 #include<ctime>
-#include"wymiary.h"
+#include"Sizes.h"
 using namespace std;
 
 class Point_er

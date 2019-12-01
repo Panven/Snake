@@ -1,7 +1,6 @@
 #include<iostream>
 #include<conio.h>
-#include"gierka.h"
-
+#include "Game.h"
 using namespace std;
 
 Game::Game(bool boolen)
@@ -13,18 +12,18 @@ Game::~Game()
 
 }
 
-void Game::setup(Snake_head*snake_head,Fruit*fruit,Sizes*sizes/*,Board*board*/)
+void Game::setup(Snake_head*snake_head,Fruit*fruit,Sizes*sizes,Board*board)
 {	
 	
     dir = STOP;
-	//score = 0;
+	board->score = 0;
     sizes->load_sizes();
     board->height=sizes->height;
     board->width=sizes->width;
     fruit->load_point(sizes);
     snake_head->load_snake_head(sizes);
 }
-void Game::logic(Snake_head*snake_head,Fruit*fruit,Sizes*sizes,Snake_tail*snake_tail)
+void Game::logic(Snake_head*snake_head,Fruit*fruit,Sizes*sizes,Snake_tail*snake_tail,Board * board)
 {
     int prevX = snake_tail->tailX[0];
     int prevY = snake_tail->tailY[0];
@@ -71,7 +70,7 @@ void Game::logic(Snake_head*snake_head,Fruit*fruit,Sizes*sizes,Snake_tail*snake_
         fruit->x = rand() % sizes->width;
         fruit->y = rand() % sizes->height;
         snake_tail->ntail++;
-		//score += 10;
+		board->score += 10;
     }
 }
 void Game::input()

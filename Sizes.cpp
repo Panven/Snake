@@ -1,5 +1,5 @@
 #include<iostream>
-#include"wymiary.h"
+#include"Sizes.h"
 
 using namespace std;
 

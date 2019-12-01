@@ -1,5 +1,5 @@
 #include<iostream>
-#include"snaketail.h"
+#include"Snake_tail.h"
 
 using namespace std;
 

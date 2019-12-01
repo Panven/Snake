@@ -3,8 +3,8 @@
 #include<cstdlib>
 #include<cmath>
 #include<ctime>
-#include"wymiary.h"
-#include"punkt.h"
+#include"Sizes.h"
+#include"Point_er.h"
 using namespace std;
 
 

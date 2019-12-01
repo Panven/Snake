@@ -1,10 +1,12 @@
 #include <iostream>
-#include"wymiary.h"
-#include"fruit.h"
-#include"punkt.h"
-#include"board.h"
-#include"snaketail.h"
-#include"gierka.h"
+#include "Sizes.h"
+#include "Game.h"
+#include "Board.h"
+#include "Fruit.h"
+#include "Point_er.h"
+#include "Snake.h"
+#include "Snake_head.h"
+#include "Snake_tail.h"
 #include<windows.h>
 
 
@@ -21,13 +23,13 @@ int main()
     Snake_tail snake_tail;
 
     Game game;
-    game.setup(&snake_head,&fruit,&sizes/*,&board*/);
+    game.setup(&snake_head,&fruit,&sizes,&board);
     while(!game.gameover)
     {
-        board.board_draw(&fruit,&snake_head,&snake_tail/*,&game*/);
+        board.board_draw(&fruit,&snake_head,&snake_tail);
         game.input();
-        game.logic(&snake_head,&fruit,&sizes,&snake_tail);
-        Sleep(20);
+        game.logic(&snake_head,&fruit,&sizes,&snake_tail,&board);
+		Sleep(20);
     }
     return 0;
 }
